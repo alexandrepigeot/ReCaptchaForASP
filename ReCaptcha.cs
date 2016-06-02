@@ -98,7 +98,7 @@ namespace System.Web
 		/// <summary>
 		/// Generate the Widget's code.
 		/// </summary>
-		public static HtmlString ReCaptchaWidget
+		public static HtmlString Widget
 		{
 			get
 			{
