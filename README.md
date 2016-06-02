@@ -10,9 +10,11 @@ Usually in your Global.asax (Application_OnStart) or your _AppStart.cshtml, depe
 
 You can add the script in the head of your html by using `@ReCaptcha.GenerateScript()` and you can render the widget anywhere you want in your body by using `@ReCaptcha.Widget`.
 
+Afterwards, on server-side code, you can send create and verify a ReCaptcha request simply by calling `var captcha = ReCaptcha.CurrentReply`. Start your code with `if (captcha.Success)` and you're good to go!
+
 ## AppStart - for the tweakhead
 
-You can also set a number of optional settings in AppStart, all of which are properly documented on (Google ReCaptcha's website).[https://developers.google.com/recaptcha/intro] so I won't do it here.
+You can also set a number of optional settings in AppStart, all of which are properly documented on [Google ReCaptcha's website](https://developers.google.com/recaptcha/intro) so I won't do it here.
 
 Script features:
 - ReCaptcha.OnLoad
@@ -33,5 +35,7 @@ Finally, and in the unlikely event that Google modifies its Api Urls etc., you c
 - ReCaptcha.VerifyIp (true - automated)
 - ReCaptcha.TimeoutAttempts (10)
 
+After you have acquired `ReCaptcha.CurrentReply`, you can also access the error-codes as an array of string through `captcha.ErrorCodes`.
+
 ## Thanks
-I had wondered for a while now why Google never released an official ASP.Net plug for their reCAPTCHA... If you would like to improve on this code, thanks to shoot me an (email)[mailto:alexandrepigeot@gmail.com]. I would appreciate some help on this.
+I had wondered for a while now why Google never released an official ASP.Net plug for their reCAPTCHA... If you would like to improve on this code, thanks to shoot me an [email](mailto:alexandrepigeot@gmail.com). I would appreciate some help on this.
