@@ -209,7 +209,7 @@ namespace System.Web
 			{
 				string result;
 				result = "secret=" + SecretKey;
-				result += "&response" + response;
+				result += "&response=" + response;
 
 				if (VerifyIp && !string.IsNullOrEmpty(userIp))
 					result += "&remoteip=" + userIp;
